@@ -1,0 +1,19 @@
+name: CI Workflow
+
+on: 
+  push:
+    branches:
+      - main  # Change this to the branch you want to trigger the workflow on
+
+jobs:
+  build:
+    runs-on: self-hosted  # Use the self-hosted runner
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: building
+        run: |
+          cd /home/sampathkumar/Scripts
+          bash dotnetapp.sh
